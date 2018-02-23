@@ -1,28 +1,75 @@
-.App {
-  text-align: center;
+.content{
+   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+.heading {
+  color: #5c5c5c;
+  width: 100%;
+  font-size: 2.5rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 0.7;
+  position: relative;
+  padding: 1.5em 0 3em;
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
-.App-title {
-  font-size: 1.5em;
-}
+  &:before {
+    background: #fff;
+    display: block;
+    height: 1em;
+    width: 100%;
+    position: absolute;
+    content: " ";
+    bottom: 1.4em;
+    z-index: 1;
+  }
 
-.App-intro {
-  font-size: large;
+  &:after {
+    @include background-image(radial-gradient(50% 40%, closest-side, #E4E4E4, #ffffff));
+    bottom: .2em;
+    display: block;
+    height: 2em;
+    width: 100%;
+    position: absolute;
+    content: " ";
+  }
 }
+body {
+	height: 100%;
+	background: white;
+	background: radial-gradient(circle, #fff 20%, #ccc);
+	background-size: cover;
+}
+#calculator {
+	width: 325px;
+	height: auto;
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+	padding: 20px 20px 9px;
+
+	background: #d0deae!important;
+	/*background: linear-gradient(#9dd2ea, #8bceec);*/
+	border-radius: 3px;
+	box-shadow: 0px 4px #d6d6d6,  0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+.calc{
+      height: 30px;
+  outline: none;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+  font: bold 20px Arial, sans-serif;
+  text-align :right;
+}
+.calc-expr{
+border-width: 2px;
+border-style: initial;
+border-color: initial;
+border-image: initial;
+}
+.btn-clear{
+      background-color: #ff4f4f;
+      border-color:   #ff4f4f;
 }

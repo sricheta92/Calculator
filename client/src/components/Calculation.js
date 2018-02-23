@@ -1,12 +1,23 @@
 import React, {Component} from 'react'
 
 class Calculation extends Component{
+  constructor(props){
+    super(props);
+    this.handleMaxLength = this.handleMaxLength.bind(this);
+  }
 
+handleMaxLength(event){
+console.log(event.target.value);
+    if(event.target.value.length>8){
+      event.preventDefault();
+    }
+
+}
 render(){
 
   return(
 
-        <input className = "cols-sm-10 col-xs-10 col-md-10" type = "text" value = {this.props.value} readOnly  />
+        <input className = " cols-sm-8 col-xs-8 col-md-8 calc" type = "text" onChange={ this.handleMaxLength}   maxLength="9" value = {this.props.value} readOnly  />
 
 
   );
@@ -14,4 +25,4 @@ render(){
 
 }
 
-export default Calculation
+export default Calculation;

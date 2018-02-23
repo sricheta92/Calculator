@@ -6,3 +6,6 @@ body {
 .calculation-row{
   width :100%;
 }
+.outline{
+ outline : 1px solid orange;
+}
