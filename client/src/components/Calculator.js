@@ -36,7 +36,8 @@ class Calculator extends Component{
     }
     if(val.toUpperCase() === 'C'){
       this.setState({
-          expression : ''
+          expression : '',
+          output :'0'
       })
       return;
     }
@@ -54,35 +55,38 @@ class Calculator extends Component{
     let subExprNum2='';
 
         while(count<expr.length && !isNaN(expr.charAt(count))){
-          subExprNum1 = expr.charAt(count) +subExprNum1;
+          subExprNum1 = subExprNum1 +  expr.charAt(count);
           count++;
         }
         let operand = expr.charAt(count);
         operand = operand.replace("/", "d");
         count++;
         while(count<expr.length && !isNaN(expr.charAt(count))){
-          subExprNum2 = expr.charAt(count) +subExprNum2;
+          subExprNum2 = subExprNum2 + expr.charAt(count) ;
           count++;
         }
 
 
-      let res = this.callServer(subExprNum1, subExprNum2, operand);
-      expr = expr.substring(count+1);
-      if(expr.length>0){
-        expr = res+ expr;
-        this.parseExpression(expr);
-      }else{
-        this.setState({
-          output : res
-        })
-      }
+      let res = this.callServer(subExprNum1, subExprNum2, operand, count, expr);
+
 
   }
 
 
-  callServer(a,b,op) {
-    axios.get("http://localhost:5000/calculator/"+op+"/"+a+"/"+b).then(function(response){
-       return response.data.output;
+  callServer(a,b,op,count,expr) {
+    let self = this;
+    axios.get("http://localhost:5000/calculator/"+op+"/"+a+"/"+b)
+    .then(function(response){
+       let res =  response.data.output;
+       expr = expr.substring(count);
+       if(expr.length>0){
+         expr = res+ expr;
+         self.parseExpression(expr);
+       }else{
+         self.setState({
+           output : res
+         })
+       }
     }).catch(function(error){
       console.log("error");
     });
