@@ -5,9 +5,10 @@ class Calculation extends Component{
 render(){
 
   return(
-    <div className  = "row">
-      <input type = "text" value = {this.props.value} readOnly />
-    </div>
+
+        <input className = "cols-sm-10 col-xs-10 col-md-10" type = "text" value = {this.props.value} readOnly  />
+
+
   );
 }
 
