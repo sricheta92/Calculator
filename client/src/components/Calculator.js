@@ -70,6 +70,7 @@ class Calculator extends Component{
         }
         let operand = expr.charAt(count);
         operand = operand.replace("/", "d");
+        operand = operand.replace("%", "m");
         count++;
         while(count<expr.length && (!isNaN(expr.charAt(count)) || expr.charAt(count) === '.')){
           subExprNum2 = subExprNum2 + expr.charAt(count) ;
@@ -93,6 +94,9 @@ class Calculator extends Component{
          expr = res+ expr;
          self.parseExpression(expr);
        }else{
+         if(res.length>9){
+           res = res.toExponential();
+         }
          self.setState({
            output : res
          })

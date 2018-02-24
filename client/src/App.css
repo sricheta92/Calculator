@@ -69,7 +69,7 @@ border-style: initial;
 border-color: initial;
 border-image: initial;
 }
-.btn-clear{
+.btn-clear, .btn-clear:hover {
       background-color: #ff4f4f;
       border-color:   #ff4f4f;
 }

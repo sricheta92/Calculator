@@ -7,7 +7,7 @@ class Calculation extends Component{
   }
 
 handleMaxLength(event){
-console.log(event.target.value);
+  console.log(event.target.value);
     if(event.target.value.length>8){
       event.preventDefault();
     }
