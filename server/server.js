@@ -16,9 +16,9 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.get('/calculator/:op/:a/:b', (req, res) => {
-  console.log("hit");
   let a = parseFloat(req.params.a)
   let b = parseFloat(req.params.b);
+  console.log("hit"+a+" "+b);
   if(req.params.op=="+")
     res.status(200).json({output: a+b});
   else if(req.params.op=="-")
