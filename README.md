@@ -10,7 +10,7 @@ The purpose of the system is to develop a real-like Calculator. This Calculator 
 6.	Clear button to clear the operation
 7.	Support of Decimal
 ```
-![alt text](screenshots/capture.PNG "Landing page")
+![alt text](screenshots/capture.png "Landing page")
 
 ### Prerequisites
 
