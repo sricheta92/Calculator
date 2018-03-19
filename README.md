@@ -21,7 +21,7 @@ should have NodeJS installed in your system.
 
 ### Installing client side (running on 3000)
 
-Follow the be below steps
+Follow the below steps
 ```
 1. go to client folder
 2. run command - npm start or yarn start
@@ -29,7 +29,7 @@ Follow the be below steps
 ```
 ### Installing Server side (running on 5000)
 
-Follow the be below steps
+Follow the below steps
 ```
 1. go to server folder
 2. run command - nodemon server
